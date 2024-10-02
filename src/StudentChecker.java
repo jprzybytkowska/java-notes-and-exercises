@@ -6,25 +6,38 @@
 public class StudentChecker {
     public static void main(String[] args) {
 
-      Student dane = new Student();
-      dane.imie = "Jan";
-      dane.nazwisko = "Kowalski";
-      dane.nick = "jako";
-      dane.email = "jako@gmail.com";
-      dane.numerIndeksu = 123;
+      Student adam = new Student();
+      adam.imie = "Adam";
+      adam.nazwisko = "Adamski";
+      adam.numerIndeksu = 123456;
+      adam.email = "adama@gmail.com";
+      adam.nick = "adama";
 
-      dane.przedstawSie();
-      dane.podajEmail();
-      dane.zalogujSie();
-      dane.podajNrIndeksu();
+      Student kasia = new Student();
+      kasia.imie = "Kasia";
+      kasia.nazwisko = "Kasiaska";
+      kasia.numerIndeksu = 123789;
+      kasia.email = "kasiak@gmail.com";
+      kasia.nick = "kasiak";
 
-        String[] studenci = new String[5];
-        studenci[0] = "Jan";
-        studenci[1] = "Kowalski";
-        studenci[2] = "jako";
-        studenci[3] = "jako@gmail.com";
-        studenci[4] = "123";
+      Student piotr = new Student();
+      piotr.imie = "Piotr";
+      piotr.nazwisko = "Piotrowski";
+      piotr.numerIndeksu = 321789;
+      piotr.email = "piotrp@gmail.com";
+      piotr.nick = "piotrp";
 
-        System.out.println(studenci);
+      Student[] students = new Student[3];
+      students[0] = adam;
+      students[1] = kasia;
+      students[2] = piotr;
+
+      for (int i=0; i<students.length; i++) {
+        students[i].przedstawSie();
+        students[i].podajEmail();
+        students[i].podajNrIndeksu();
+        students[i].zalogujSie();
+      }
+
     }
 }

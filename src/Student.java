@@ -7,11 +7,11 @@ public class Student {
     public int numerIndeksu;
 
     public void przedstawSie() {
-        System.out.println("Nazywam się " + imie + nazwisko);
+        System.out.println("Mam na imię " + imie + " " + nazwisko);
     }
 
     public void zalogujSie() {
-        System.out.println("Zaloguj się za pomocą " + nick);
+        System.out.println("Loguje się nickiem " + nick);
     }
 
     public void podajNrIndeksu() {
@@ -19,6 +19,6 @@ public class Student {
     }
 
     public void  podajEmail() {
-        System.out.println("Mój we-mail to: " + email);
+        System.out.println("Mój e-mail to " + email);
     }
 }
