@@ -6,12 +6,16 @@
 public class StudentChecker {
     public static void main(String[] args) {
 
+      String uczelnia = Student.uczelniainfo;
+      Student.uczelniainfo();
+
       Student adam = new Student();
       adam.imie = "Adam";
       adam.nazwisko = "Adamski";
       adam.numerIndeksu = 123456;
       adam.email = "adama@gmail.com";
       adam.nick = "adama";
+      String uczelniaAdama = adam.uczelniainfo;
 
       Student kasia = new Student();
       kasia.imie = "Kasia";
@@ -37,6 +41,7 @@ public class StudentChecker {
         students[i].podajEmail();
         students[i].podajNrIndeksu();
         students[i].zalogujSie();
+
       }
 
     }

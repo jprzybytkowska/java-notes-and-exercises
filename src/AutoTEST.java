@@ -1,7 +1,15 @@
 public class AutoTEST {
 
     public static void main(String[] args) {
-        Auto mercedes = new Auto(); //
+
+        Auto auto = new Auto();
+
+        System.out.println(auto.marka);
+        System.out.println(auto.model);
+        System.out.println(auto.rok);
+        System.out.println(auto.przebieg);
+
+        Auto mercedes = new Auto();
         mercedes.marka = "Mercedes";
         mercedes.model = "Klasa S";
         mercedes.rok = 2021;
