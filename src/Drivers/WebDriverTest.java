@@ -1,12 +1,10 @@
 package Drivers;
 
-public abstract class WebDriverTest {
+public class WebDriverTest {
 
     public static void main(String[] args) {
 
-        String name = "Chrome";
-        WebDriver driver = getDriver(name);
-        assert driver != null;
+        WebDriver driver = getDriver(DriverType.FIREFOX);
         driver.get();
         driver.findElementBy();
         driver.findElementBy();
@@ -16,12 +14,13 @@ public abstract class WebDriverTest {
 
     }
 
-    private static WebDriver getDriver(String name) {
-        if (name.equals("Chrome")) {
+    private static WebDriver getDriver(DriverType type) {
+        if (type.name.equals("chrome")) {
+            System.out.println(type.getPath());
             return new ChromeDriver();
-        } else if (name.equals("Firefox"))
+        }
+            System.out.println(type.getPath());
             return new FirefoxDriver();
-    }
-    throw new NoValidBrowserName("No valid browser name");
 
     }
+}
