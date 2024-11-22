@@ -1,24 +1,26 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SeleniumTest {
+public class PierwszySeleniumTest {
 
     @Test
     public void openGooglePage() {
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = getDriver("chrome");
-        driver.manage().window().maximize();
+        WebDriver driver = new ChromeDriver();
+
         driver.get("https://www.google.com");
 
         //przechodzimy do okienka z plikami cookies
         //driver.switchTo().frame(0);
 
         //znajduje przycisk
-        WebElement agreeButton = driver.findElement(By.xpath("//button[.='Accept all']"));
+        WebElement agreeButton = driver.findElement(By.xpath("//div[text()='Accept all']"));
 
         //klikniecie przycisku akceptacji plikow cookies
         agreeButton.click();
@@ -36,22 +38,13 @@ public class SeleniumTest {
         searchField.sendKeys(Keys.ENTER);
 
         //sprawdzenie czy mamy odpowiedni rezultat czyli link selenium.dev
-        WebElement result = driver.findElement(By.xpath("//a[contains(@href='selenium.dev')]"));
+        WebElement result;
+        result = driver.findElement(By.xpath("//a[contains(@href='selenium.dev')]"));
 
         //asercje - specjalne metody sprawdzajace
         Assert.assertTrue(result.isDisplayed());
 
-    }
+        driver.quit();
 
-    public WebDriver getDriver(String browser) {
-
-        switch (browser) {
-            case "chrome":
-                return new ChromeDriver();
-            case "firefox":
-                return new FirefoxDriver();
-            default:
-                throw new InvalidArgumentException("Invalid browser name");
-        }
     }
 }
