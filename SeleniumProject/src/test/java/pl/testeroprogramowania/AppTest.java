@@ -1,4 +1,4 @@
-package $pl.testeroprogramowania;
+package pl.testeroprogramowania;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

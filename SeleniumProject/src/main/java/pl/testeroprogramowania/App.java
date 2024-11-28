@@ -1,4 +1,4 @@
-package $pl.testeroprogramowania;
+package pl.testeroprogramowania;
 
 /**
  * Hello world!
